@@ -5,6 +5,8 @@ Built a simulated enterprise network environment using virtualization
 to practice and demonstrate IT infrastructure skills including network
 configuration, security, Active Directory, and service deployment.
 
+![Network Topology Diagram](Images/NetworkDiagram.png)
+
 ## 🎯​OBJECTIVES  
 ✓ Design and implement segmented network architecture  
 ✓ Configure enterprise-grade firewall rules  
@@ -60,6 +62,11 @@ VLAN 40 - SERVER (192.168.40.0/24)
 - Access: Accepts from Management & Users, can reach Internet
 - Hosts: DC01 (192.168.40.10 - Static)
 
+![pfSense Interface Assignments](Images/InterfaceAssignment.png)
+*pfSense interface configuration showing all VLANs*
+![pfSense DHCP Leases](DHCPLeases.png)
+*DHCP leases showing all VMs with their assigned IP addresses*
+
 **⚙️PFENSE FIREWALL CONFIGURATION**
 
 WAN Interface (em0):
@@ -84,6 +91,9 @@ MANAGEMENT VLAN:
 - ✅PASS - Any protocol from MANAGEMENT net to Any destination  
     → Allows full administrative access
 
+![Management Firewall Rules](Images/FirewallMGMT.png)
+*Firewall rules for Management VLAN - full access*  
+
 USERS VLAN:   
 - 🚫BLOCK - Any protocol from USERS net to 192.168.10.0/24  
     → Prevents access to Management VLAN  
@@ -92,13 +102,19 @@ USERS VLAN:
 - ✅PASS - Any protocol from USERS net to 192.168.40.0/24  
     → Allows access to Server VLAN  
 - ✅PASS - Any protocol from USERS net to Any  
-    → Allows Internet access  
+    → Allows Internet access
+  
+![Users Firewall Rules](Images/FirewallUSER.png)
+*Firewall rules for Users VLAN - controlled access*  
 
 GUEST VLAN:
 - 🚫BLOCK - Any protocol from GUEST net to private networks   
     → Blocks all internal network access  
 - ✅PASS - Any protocol from GUEST net to Any  
-    → Allows Internet access only  
+    → Allows Internet access only
+
+![Guest Firewall Rules](Images/FirewallGUEST.png)
+*Firewall rules for Guest VLAN - internet only*
 
 SERVER VLAN:
 - ✅PASS - Any protocol from 192.168.10.0/24 to SERVER net  
@@ -106,7 +122,10 @@ SERVER VLAN:
 - ✅PASS - Any protocol from 192.168.20.0/24 to SERVER net  
     → Accepts connections from Users  
 - ✅PASS - Any protocol from SERVER net to Any  
-    → Allows outbound Internet access  
+    → Allows outbound Internet access
+
+![Server Firewall Rules](Images/FirewallSERVER.png)
+*Firewall rules for Server VLAN - accepting connections*  
 
 Security Principle: Default Deny  
 - All traffic not explicitly allowed is blocked  
@@ -121,6 +140,9 @@ Security Principle: Default Deny
 - Domain Controller: DC01.homelab.local
 - Forest Functional Level: Windows Server 2016
 - Domain Functional Level: Windows Server 2016
+
+![AD Users and Computers Overview](Images/OUList.png)
+*Active Directory Organizational Unit structure*
 
 **🖥️DOMAIN CONTROLLER SPECIFICATIONS**
 - Hostname: DC01
@@ -166,16 +188,25 @@ tuser (Test User)
 - Description: Standard IT user
 - Member of: IT Admins
 - Purpose: Testing standard user access
+  
+![AD Users - IT Staff OU](Images/ITUser.png)
+*Users in IT Staff OU*
 
 ssales (Sarah Sales)
 - OU: Departments/Sales
 - Member of: Sales Team
 - Purpose: Sales department representative
 
+![AD Users - Sales](Images/SalesUser.png)
+*Users in Sales OU*
+
 hhr (Helen HR)
 - OU: Departments/HR
 - Member of: HR Team
 - Purpose: HR department representative
+
+![AD Users - HR](Images/HRUser.png)
+*Users in HR OU*
 
 **👮SECURITY GROUPS**
 
@@ -194,19 +225,29 @@ HR Team (Global Security Group)
 - Members: hhr
 - Permissions: Modify access to HR shared folder
 
+![Security Groups](Images/SecGroup.png)
+*Security group*
+![Group Membership](Images/GroupMembership.png)
+*Example: jadmin group membership details*
+
 **🤝DOMAIN-JOINED COMPUTERS**  
 
 WIN10-MGMT
 - OU: Workstations
-- IP: 192.168.10.xxx (DHCP)
+- IP: 192.168.10.100 (DHCP)
 - Purpose: IT management workstation
 - Users: jadmin, Administrator
 
 WIN10-USER
 - OU: Workstations
-- IP: 192.168.20.xxx (DHCP)
+- IP: 192.168.20.100 (DHCP)
 - Purpose: Standard user workstation
 - Users: tuser, ssales, hhr
+
+![Workstations OU](Images/ADWorkstation.png)
+*Domain-joined computers in Workstations OU*
+![Servers OU](Images/ADServer.png)
+*DC01 in Servers OU*
 
 **🛠️DNS CONFIGURATION**
 
@@ -216,6 +257,9 @@ WIN10-USER
 - Reverse Lookup Zones: Created automatically
 - Forwarders: 8.8.8.8, 8.8.4.4 (for external resolution)
 - DHCP configured to provide DC01 as DNS server
+
+![DNS Manager](Images/DNSLookup.png)
+*DNS Forward Lookup Zone for homelab.local*
 
 ## 👨‍🔧SERVICES CONFIGURATION
 
@@ -230,11 +274,19 @@ WIN10-USER
 - Access: Management and Users VLANs (Blocked from Guest)
 - Purpose: Internal company portal demonstrating web services
 
+![IIS Website - Homepage](Images/IISHomepage.png)
+*Custom HomeLab Intranet website running on IIS*
+![IIS Manager](Images/IISManager.png)
+*IIS Manager showing website configuration*
+
 **🗃️FILE SHARING SERVICES**
 
 - Share Name: Shared
 - UNC Path: \\DC01\Shared
 - Physical Path: C:\Shared
+
+![Mapped Drive](Images/MappedDrive.png)
+*S: drive automatically mapped via Group Policy*
 
 **🗂️Folder Structure and Permissions**
 
@@ -258,11 +310,19 @@ HR (HR Department)
 - NTFS: HR Team (Modify)
 - Purpose: Confidential HR documents
 
+![File Share Structure](Images/FileShareStruc.png)
+*File share structure: \\DC01\Shared with department folders*
+
 **🔓Access Control Method**
 - Share-level permissions: Domain Users (Read)
-- NTFS permissions: Group-based (most restrictive wins)
+- NTFS permissions: Group-based
 - Security: Inheritance disabled on department folders
 - Principle: Least privilege access
+
+![File Share - Access Granted](Images/AccessGranted.png)
+*Successful access to authorized folder (IT folder by IT user)*
+![File Share - Access Denied](Images/AccessDenied.png)
+*Access denied to unauthorized folder - NTFS permissions working*
 
 **🖨️PRINT SERVICES**
 
@@ -273,6 +333,9 @@ HR (HR Department)
 - Driver: Generic / Text Only
 - Access: All domain users
 - Purpose: Demonstrate print services management
+
+![Print Management](Images/PrintManagement.png)
+*Print Management console showing HomeLab-Printer*
 
 ## 📜GROUP POLICY CONFIGURATION
 
@@ -298,11 +361,21 @@ IT Desktop Shortcuts
 - Settings: Creates desktop shortcut to \\DC01\Shared\IT
 - Purpose: Quick access to IT resources
 
+![Group Policy Management](Images/GPOManagement.png)
+*Group Policy Management Console showing all GPOs*
+![GPO - Drive Mapping](Images/GPOMappedDrive.png)
+*Drive mapping configuration in Group Policy Preferences*
+![GPO - Desktop Shortcuts](Images/GPOShortcut.png)
+*Desktop shortcuts GPO configuration for IT Staff*
+
 **📝GPO APPLICATION PROCESS**  
 - Computer policies apply at startup
 - User policies apply at logon
 - Update command: gpupdate /force
 - Testing: gpresult /r (shows applied policies)
+
+![GPResult Output](Images/GPResult.png)
+*gpresult /r showing applied Group Policies*
 
 ## ✍🏻TESTING & VALIDATION
 
@@ -310,7 +383,12 @@ IT Desktop Shortcuts
 ✓ All VMs receive DHCP addresses in correct ranges  
 ✓ DNS resolution working (nslookup, ping by hostname)  
 ✓ Internet access from all VLANs  
-✓ Inter-VLAN routing through pfSense gateway  
+✓ Inter-VLAN routing through pfSense gateway 
+
+![ipconfig Output](Images/IPConfig.png)
+*ipconfig /all showing correct IP, DNS, and gateway configuration*
+![Successful DNS Resolution](Images/Nslookup.png)
+*nslookup successfully resolving dc01.homelab.local*
 
 **🧱FIREWALL RULE VALIDATION**  
 ✓ Management can access all VLANs  
@@ -319,12 +397,32 @@ IT Desktop Shortcuts
 ✓ Guest can ONLY access Internet (all internal blocked)  
 ✓ pfSense logs show blocked connection attempts  
 
+![Management](Images/FWTest-MGMT1.png)
+*Successful Firewall Verification*
+![Management](Images/FWTest-MGMT2.png)
+*Successful Firewall Verification*
+![User](Images/FWTest-USER.png)
+*Successful Firewall Verification*
+![Guest](Images/FWTet-GUEST.png)
+*Successful Firewall Verification*
+![Server](Images/FWTest-SERVER.png)
+*Successful Firewall Verification*
+
 **📁ACTIVE DIRECTORY TESTS**  
 ✓ Domain join successful for Windows 10 workstations  
 ✓ Domain users can log in to workstations  
 ✓ Computer objects appear in correct OUs  
 ✓ DNS integrated with AD (SRV records present)  
-✓ Domain replication status: Healthy (dcdiag passed)  
+✓ Domain replication status: Healthy (dcdiag passed) 
+
+![Domain Join Success](Images/ComputerName.png)
+*homelab.local domain computer name*
+![Domain Login](Images/LoginScreen.png)
+*Login screen showing HOMELAB domain*
+![Whoami Output](Images/Whoami.png)
+*whoami command showing HOMELAB\username*
+![Domain Controller Validation](Images/Nltest.png)
+*nltest /dsgetdc showing DC01 as domain controller*
 
 **👨‍🔧SERVICE ACCESS TESTS**    
 ✓ IIS website accessible from Management and Users VLANs  
@@ -333,11 +431,23 @@ IT Desktop Shortcuts
 ✓ NTFS permissions enforced (access denied for unauthorized folders)  
 ✓ Mapped drive (S:) appears automatically after GPO  
 
+![Web Access - Management VLAN](Images/Web-MGMT.png)
+*Accessing IIS website from Management VLAN*
+![Web Access - Users VLAN](Images/Web-USER.png)
+*Accessing IIS website from Users VLAN*
+![Web Access - Guest Blocked](Images/Web-GUEST.png)
+*Cannot access IIS website from Guest VLAN (blocked by firewall)*
+
 **👥GROUP POLICY TESTS**  
 ✓ Desktop wallpaper applied after gpupdate  
 ✓ Network drive mapping automated (S: drive)  
 ✓ Desktop shortcuts created for IT Staff OU  
 ✓ GPO inheritance working correctly  
+
+![Desktop Wallpaper Applied](Images/GPOWallpaper.png)
+*Desktop wallpaper automatically applied via GPO*
+![Auto-Mapped Drive](Images/GPOAutoMapped.png)
+*S: drive automatically mapped on user login*
 
 **🛡️SECURITY VALIDATION**  
 ✓ Guest VLAN completely isolated from internal networks  
@@ -345,6 +455,9 @@ IT Desktop Shortcuts
 ✓ File access controlled by AD group membership  
 ✓ NTFS permissions more restrictive than share permissions  
 ✓ Default deny firewall policy (only allowed traffic passes)  
+
+![Server Manager - Roles](Images/ServerRoles.png)
+*Server Manager showing all installed roles on DC01*
 
 ## 🚨TROUBLESHOOTING PERFORMED
 
