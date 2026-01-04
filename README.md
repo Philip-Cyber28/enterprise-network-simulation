@@ -286,7 +286,7 @@ WIN10-USER
 - UNC Path: \\DC01\Shared
 - Physical Path: C:\Shared
 
-![Mapped Drive](Images/MappedDrive.png)
+![Mapped Drive](Images/MappedDrive.png)  
 *S: drive automatically mapped via Group Policy*
 
 **🗂️Folder Structure and Permissions**
@@ -311,7 +311,7 @@ HR (HR Department)
 - NTFS: HR Team (Modify)
 - Purpose: Confidential HR documents
 
-![File Share Structure](Images/FileShareStruc.png)
+![File Share Structure](Images/FileShareStruc.png)  
 *File share structure: \\DC01\Shared with department folders*
 
 **🔓Access Control Method**
@@ -320,9 +320,9 @@ HR (HR Department)
 - Security: Inheritance disabled on department folders
 - Principle: Least privilege access
 
-![File Share - Access Granted](Images/AccessGranted.png)
+![File Share - Access Granted](Images/AccessGranted.png)  
 *Successful access to authorized folder (IT folder by IT user)*
-![File Share - Access Denied](Images/AccessDenied.png)
+![File Share - Access Denied](Images/AccessDenied.png)  
 *Access denied to unauthorized folder - NTFS permissions working*
 
 **🖨️PRINT SERVICES**
@@ -335,7 +335,7 @@ HR (HR Department)
 - Access: All domain users
 - Purpose: Demonstrate print services management
 
-![Print Management](Images/PrintManagement.png)
+![Print Management](Images/PrintManagement.png)  
 *Print Management console showing HomeLab-Printer*
 
 ## 📜GROUP POLICY CONFIGURATION
@@ -362,11 +362,11 @@ IT Desktop Shortcuts
 - Settings: Creates desktop shortcut to \\DC01\Shared\IT
 - Purpose: Quick access to IT resources
 
-![Group Policy Management](Images/GPOManagement.png)
+![Group Policy Management](Images/GPOManagement.png)  
 *Group Policy Management Console showing all GPOs*
-![GPO - Drive Mapping](Images/GPOMappedDrive.png)
+![GPO - Drive Mapping](Images/GPOMappedDrive.png)  
 *Drive mapping configuration in Group Policy Preferences*
-![GPO - Desktop Shortcuts](Images/GPOShortcut.png)
+![GPO - Desktop Shortcuts](Images/GPOShortcut.png)  
 *Desktop shortcuts GPO configuration for IT Staff*  
 
 **📝GPO APPLICATION PROCESS**  
@@ -386,9 +386,9 @@ IT Desktop Shortcuts
 ✓ Internet access from all VLANs  
 ✓ Inter-VLAN routing through pfSense gateway 
 
-![ipconfig Output](Images/IPConfig.png)
+![ipconfig Output](Images/IPConfig.png)  
 *ipconfig /all showing correct IP, DNS, and gateway configuration*
-![Successful DNS Resolution](Images/Nslookup.png)
+![Successful DNS Resolution](Images/Nslookup.png)  
 *nslookup successfully resolving dc01.homelab.local*
 
 **🧱FIREWALL RULE VALIDATION**  
@@ -398,16 +398,15 @@ IT Desktop Shortcuts
 ✓ Guest can ONLY access Internet (all internal blocked)  
 ✓ pfSense logs show blocked connection attempts  
 
-![Management](Images/FWTest-MGMT1.png)
-*Successful Firewall Verification*
-![Management](Images/FWTest-MGMT2.png)
-*Successful Firewall Verification*
-![User](Images/FWTest-USER.png)
-*Successful Firewall Verification*
-![Guest](Images/FWTet-GUEST.png)
-*Successful Firewall Verification*
-![Server](Images/FWTest-SERVER.png)
-*Successful Firewall Verification*
+![Management](Images/FWTest-MGMT1.png)  
+![Management](Images/FWTest-MGMT2.png)  
+*Successful Management Firewall Verification*  
+![User](Images/FWTest-USER.png)  
+*Successful User Firewall Verification*
+![Guest](Images/FWTest-GUEST.png)  
+*Successful Guest Firewall Verification*
+![Server](Images/FWTest-SERVER.png)  
+*Successful Server Firewall Verification*
 
 **📁ACTIVE DIRECTORY TESTS**  
 ✓ Domain join successful for Windows 10 workstations  
@@ -416,13 +415,13 @@ IT Desktop Shortcuts
 ✓ DNS integrated with AD (SRV records present)  
 ✓ Domain replication status: Healthy (dcdiag passed) 
 
-![Domain Join Success](Images/ComputerName.png)
+![Domain Join Success](Images/ComputerName.png)  
 *homelab.local domain computer name*
-![Domain Login](Images/LoginScreen.png)
+![Domain Login](Images/LoginScreen.png)  
 *Login screen showing HOMELAB domain*
-![Whoami Output](Images/Whoami.png)
+![Whoami Output](Images/Whoami.png)  
 *whoami command showing HOMELAB\username*
-![Domain Controller Validation](Images/Nltest.png)
+![Domain Controller Validation](Images/Nltest.png)  
 *nltest /dsgetdc showing DC01 as domain controller*  
 
 **👨‍🔧SERVICE ACCESS TESTS**    
@@ -432,11 +431,11 @@ IT Desktop Shortcuts
 ✓ NTFS permissions enforced (access denied for unauthorized folders)  
 ✓ Mapped drive (S:) appears automatically after GPO  
 
-![Web Access - Management VLAN](Images/Web-MGMT.png)
+![Web Access - Management VLAN](Images/Web-MGMT.png)  
 *Accessing IIS website from Management VLAN*
-![Web Access - Users VLAN](Images/Web-USER.png)
+![Web Access - Users VLAN](Images/Web-USER.png)  
 *Accessing IIS website from Users VLAN*
-![Web Access - Guest Blocked](Images/Web-GUEST.png)
+![Web Access - Guest Blocked](Images/Web-GUEST.png)  
 *Cannot access IIS website from Guest VLAN (blocked by firewall)*  
 
 **👥GROUP POLICY TESTS**  
@@ -445,9 +444,9 @@ IT Desktop Shortcuts
 ✓ Desktop shortcuts created for IT Staff OU  
 ✓ GPO inheritance working correctly  
 
-![Desktop Wallpaper Applied](Images/GPOWallpaper.png)
+![Desktop Wallpaper Applied](Images/GPOWallpaper.png)  
 *Desktop wallpaper automatically applied via GPO*
-![Auto-Mapped Drive](Images/GPOAutoMapped.png)
+![Auto-Mapped Drive](Images/GPOAutoMapped.png)  
 *S: drive automatically mapped on user login*
 
 **🛡️SECURITY VALIDATION**  
@@ -457,7 +456,7 @@ IT Desktop Shortcuts
 ✓ NTFS permissions more restrictive than share permissions  
 ✓ Default deny firewall policy (only allowed traffic passes)  
 
-![Server Manager - Roles](Images/ServerRoles.png)
+![Server Manager - Roles](Images/ServerRoles.png)  
 *Server Manager showing all installed roles on DC01*
 
 ## 🚨TROUBLESHOOTING PERFORMED
