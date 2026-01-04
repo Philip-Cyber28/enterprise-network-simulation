@@ -63,8 +63,9 @@ VLAN 40 - SERVER (192.168.40.0/24)
 - Hosts: DC01 (192.168.40.10 - Static)
 
 ![pfSense Interface Assignments](Images/InterfaceAssignment.png)
-*pfSense interface configuration showing all VLANs*
-![pfSense DHCP Leases](DHCPLeases.png)
+*pfSense interface configuration showing all VLANs*  
+
+![pfSense DHCP Leases](Images/DHCPLeases.png)  
 *DHCP leases showing all VMs with their assigned IP addresses*
 
 **⚙️PFENSE FIREWALL CONFIGURATION**
@@ -245,7 +246,8 @@ WIN10-USER
 - Users: tuser, ssales, hhr
 
 ![Workstations OU](Images/ADWorkstation.png)
-*Domain-joined computers in Workstations OU*
+*Domain-joined computers in Workstations OU*  
+
 ![Servers OU](Images/ADServer.png)
 *DC01 in Servers OU*
 
@@ -275,7 +277,8 @@ WIN10-USER
 - Purpose: Internal company portal demonstrating web services
 
 ![IIS Website - Homepage](Images/IISHomepage.png)
-*Custom HomeLab Intranet website running on IIS*
+*Custom HomeLab Intranet website running on IIS*  
+
 ![IIS Manager](Images/IISManager.png)
 *IIS Manager showing website configuration*
 
@@ -320,7 +323,8 @@ HR (HR Department)
 - Principle: Least privilege access
 
 ![File Share - Access Granted](Images/AccessGranted.png)
-*Successful access to authorized folder (IT folder by IT user)*
+*Successful access to authorized folder (IT folder by IT user)*  
+
 ![File Share - Access Denied](Images/AccessDenied.png)
 *Access denied to unauthorized folder - NTFS permissions working*
 
@@ -362,11 +366,13 @@ IT Desktop Shortcuts
 - Purpose: Quick access to IT resources
 
 ![Group Policy Management](Images/GPOManagement.png)
-*Group Policy Management Console showing all GPOs*
+*Group Policy Management Console showing all GPOs*  
+
 ![GPO - Drive Mapping](Images/GPOMappedDrive.png)
-*Drive mapping configuration in Group Policy Preferences*
+*Drive mapping configuration in Group Policy Preferences*  
+
 ![GPO - Desktop Shortcuts](Images/GPOShortcut.png)
-*Desktop shortcuts GPO configuration for IT Staff*
+*Desktop shortcuts GPO configuration for IT Staff*  
 
 **📝GPO APPLICATION PROCESS**  
 - Computer policies apply at startup
@@ -375,7 +381,7 @@ IT Desktop Shortcuts
 - Testing: gpresult /r (shows applied policies)
 
 ![GPResult Output](Images/GPResult.png)
-*gpresult /r showing applied Group Policies*
+*gpresult /r showing applied Group Policies*  
 
 ## ✍🏻TESTING & VALIDATION
 
@@ -386,7 +392,8 @@ IT Desktop Shortcuts
 ✓ Inter-VLAN routing through pfSense gateway 
 
 ![ipconfig Output](Images/IPConfig.png)
-*ipconfig /all showing correct IP, DNS, and gateway configuration*
+*ipconfig /all showing correct IP, DNS, and gateway configuration*  
+
 ![Successful DNS Resolution](Images/Nslookup.png)
 *nslookup successfully resolving dc01.homelab.local*
 
@@ -398,13 +405,17 @@ IT Desktop Shortcuts
 ✓ pfSense logs show blocked connection attempts  
 
 ![Management](Images/FWTest-MGMT1.png)
-*Successful Firewall Verification*
+*Successful Firewall Verification*  
+
 ![Management](Images/FWTest-MGMT2.png)
-*Successful Firewall Verification*
+*Successful Firewall Verification*  
+
 ![User](Images/FWTest-USER.png)
-*Successful Firewall Verification*
+*Successful Firewall Verification*  
+
 ![Guest](Images/FWTet-GUEST.png)
-*Successful Firewall Verification*
+*Successful Firewall Verification*  
+
 ![Server](Images/FWTest-SERVER.png)
 *Successful Firewall Verification*
 
@@ -416,13 +427,16 @@ IT Desktop Shortcuts
 ✓ Domain replication status: Healthy (dcdiag passed) 
 
 ![Domain Join Success](Images/ComputerName.png)
-*homelab.local domain computer name*
+*homelab.local domain computer name*  
+
 ![Domain Login](Images/LoginScreen.png)
-*Login screen showing HOMELAB domain*
+*Login screen showing HOMELAB domain*  
+
 ![Whoami Output](Images/Whoami.png)
-*whoami command showing HOMELAB\username*
+*whoami command showing HOMELAB\username*  
+
 ![Domain Controller Validation](Images/Nltest.png)
-*nltest /dsgetdc showing DC01 as domain controller*
+*nltest /dsgetdc showing DC01 as domain controller*  
 
 **👨‍🔧SERVICE ACCESS TESTS**    
 ✓ IIS website accessible from Management and Users VLANs  
@@ -432,11 +446,13 @@ IT Desktop Shortcuts
 ✓ Mapped drive (S:) appears automatically after GPO  
 
 ![Web Access - Management VLAN](Images/Web-MGMT.png)
-*Accessing IIS website from Management VLAN*
+*Accessing IIS website from Management VLAN*  
+
 ![Web Access - Users VLAN](Images/Web-USER.png)
-*Accessing IIS website from Users VLAN*
+*Accessing IIS website from Users VLAN*  
+
 ![Web Access - Guest Blocked](Images/Web-GUEST.png)
-*Cannot access IIS website from Guest VLAN (blocked by firewall)*
+*Cannot access IIS website from Guest VLAN (blocked by firewall)*  
 
 **👥GROUP POLICY TESTS**  
 ✓ Desktop wallpaper applied after gpupdate  
@@ -445,7 +461,8 @@ IT Desktop Shortcuts
 ✓ GPO inheritance working correctly  
 
 ![Desktop Wallpaper Applied](Images/GPOWallpaper.png)
-*Desktop wallpaper automatically applied via GPO*
+*Desktop wallpaper automatically applied via GPO*  
+
 ![Auto-Mapped Drive](Images/GPOAutoMapped.png)
 *S: drive automatically mapped on user login*
 
