@@ -14,21 +14,18 @@ This project demonstrates the design and configuration of a small enterprise net
 - Test and troubleshoot end-to-end connectivity.
 
 ## 3. Network Topology
-Add your final Packet Tracer topology screenshot below.
 
 ![Network Topology](Screenshots/Network-Topology.png)
 
 ## 4. Devices Used
 | Device | Model | Quantity |
 |---|---|---:|
-| Routers | Cisco 2911 | 3 (including ISP, if used) |
+| Routers | Cisco 2911 | 3 |
 | Layer 3 switch | Cisco 3560-24PS | 1 |
 | Layer 2 switches | Cisco 2960 | 3 |
 | PCs | PC-PT | 6 |
 | Servers | Server-PT | 3 |
-| Wireless access point | Packet Tracer AP | 1 (if used) |
-
-Update this table to match the devices in your completed `.pkt` file.
+| Wireless access point | Packet Tracer AP | 1 ) |
 
 ## 5. Technologies Implemented
 - IPv4 addressing and subnetting
@@ -66,4 +63,3 @@ Open `Enterprise-Network.pkt` using Cisco Packet Tracer.
 Configuration and verification screenshots are stored in the `Screenshots` folder.
 
 ---
-**Note:** Replace example commands, device counts, addressing, and descriptions with the values from your actual Packet Tracer implementation. Do not publish passwords or other credentials.
