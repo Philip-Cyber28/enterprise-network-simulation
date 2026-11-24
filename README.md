@@ -43,17 +43,18 @@ This project demonstrates the design and configuration of a small enterprise net
 | Folder | Description |
 |---|---|
 | [01-Network-Topology](01-Network-Topology/) | Network layout and device roles |
-| [02-IP-Addressing-Subnetting](02-IP-Addressing-Subnetting/) | IPv4 addressing plan |
+| [02-STP-EtherChannel](02-STP-EtherChannel/) | Layer 2 redundancy |
 | [03-VLAN-Configuration](03-VLAN-Configuration/) | VLAN creation and assignment |
 | [04-Inter-VLAN-Routing](04-Inter-VLAN-Routing/) | Routing between VLANs |
 | [05-DHCP-Configuration](05-DHCP-Configuration/) | DHCP pools and relay |
 | [06-DNS-Server-Services](06-DNS-Server-Services/) | DNS and server services |
-| [07-Static-Routing](07-Static-Routing/) | Static and default routes |
-| [08-OSPF-Configuration](08-OSPF-Configuration/) | OSPF configuration |
+| [07-Port-Security-SSH](07-Port-Security-SSH/) | Switch-port and remote-access security |
+| [08-Static-Routing](08-Static-Routing/) | Static and default routes |
 | [09-NAT-PAT](09-NAT-PAT/) | Network address translation |
-| [10-ACL-Security](10-ACL-Security/) | Access control lists |
-| [11-STP-EtherChannel](11-STP-EtherChannel/) | Layer 2 redundancy |
-| [12-Port-Security-SSH](12-Port-Security-SSH/) | Switch-port and remote-access security |
+| [10-OSPF-Configuration](10-OSPF-Configuration/) | OSPF configuration |
+| [11-ACL-Security](11-ACL-Security/) | Access control lists |
+
+
 
 ## 7. Project File
 Open `Enterprise-Network.pkt` using Cisco Packet Tracer.
