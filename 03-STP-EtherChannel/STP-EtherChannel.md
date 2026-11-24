@@ -51,7 +51,7 @@ The configuration includes:
 
 **BPDU Guard Configuration - AS1**
 
-![BPDU Guard AS1](/Screenshots/bpdu-guard-as1.png)
+![BPDU Guard AS1](/Screenshots/bpdu-gurad-as1.png)
 
 ---
 
