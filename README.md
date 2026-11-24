@@ -16,7 +16,7 @@ This project demonstrates the design and configuration of a small enterprise net
 ## 3. Network Topology
 Add your final Packet Tracer topology screenshot below.
 
-![Network Topology](Screenshots/01-Network-Topology.png)
+![Network Topology](Screenshots/Network-Topology.png)
 
 ## 4. Devices Used
 | Device | Model | Quantity |
