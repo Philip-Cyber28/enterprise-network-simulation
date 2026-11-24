@@ -35,8 +35,5 @@ show vlan brief
 show interfaces trunk
 ```
 
-## 5. Testing Results
-Record whether end devices were assigned to the correct VLANs and whether trunk links carried the required VLANs.
-
-## 6. Screenshots
-Add screenshots of VLAN creation, port assignments, and verification.
+## 5. Screenshots
+![Image description](Screenshots/creating-vlan-as1.png)
