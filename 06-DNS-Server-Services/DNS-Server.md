@@ -11,7 +11,7 @@ The following table identifies the server services documented in the network.
 
 | Service | Server Name | IP Address |
 |---|---|---|
-| DNS | DNS Server | As configured |
+| DNS | DNS Server | 192.168.10.20 |
 
 ## 3. DNS Configuration
 
@@ -29,7 +29,7 @@ The DNS service contains the hostname records configured for the enterprise netw
 
 | Hostname | Record Type | IP Address |
 |---|---|---|
-| As configured | A | As configured |
+| google.com | A | 8.8.8.8 |
 
 ## 4. Other Server Services
 
