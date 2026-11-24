@@ -210,10 +210,3 @@ The following screenshot illustrates the completed enterprise network topology i
 
 The screenshot shows the ISP connection, edge and core routers, Core Layer 3 Switch, three access switches, EtherChannel links, departmental end devices, wireless access point, and internal servers.
 
-## 13. Conclusion
-
-The enterprise network uses a hierarchical network design consisting of an edge/WAN layer, a core layer, and an access layer. VLAN segmentation separates the eight departments, while the Core Layer 3 Switch provides inter-VLAN routing. LACP EtherChannel connections improve bandwidth utilization and link redundancy between the core and access switches.
-
-Internal WEB, DNS, and DHCP servers provide essential network services through the dedicated server VLAN.
-
-This topology provides an organized and scalable foundation for the enterprise network.
