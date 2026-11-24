@@ -1,4 +1,3 @@
-
 # OSPF Configuration
 
 ## 1. Objective
@@ -46,11 +45,9 @@ OSPF allows participating devices to exchange routing information dynamically an
 
 | Device | Process ID | Area | Networks advertised |
 |---|---|---|---|
-| R1 | Actual process ID | Actual area | 10.0.0.4/30 |
-| R2 | Actual process ID | Actual area | 10.0.0.4/30, 10.0.0.8/30 |
-| Core Switch | Actual process ID | Actual area | 10.0.0.8/30 and configured VLAN networks |
-
-The process ID, area, and advertised networks must match the actual configurations on the devices. VLAN networks should only be advertised if they are configured as Layer 3 interfaces and included in OSPF.
+| R1 | 10 | Actual area | 10.0.0.4/30 |
+| R2 | 10 | Actual area | 10.0.0.4/30, 10.0.0.8/30 |
+| Core Switch | 10 | Actual area | 10.0.0.8/30 and configured VLAN networks |
 
 ## 4. Configuration
 
@@ -60,7 +57,7 @@ OSPF is configured using Cisco IOS commands. The following commands demonstrate 
 
     enable
     configure terminal
-    router ospf 1
+    router ospf 10
      network 10.0.0.4 0.0.0.3 area 0
     end
     write memory
@@ -69,7 +66,7 @@ OSPF is configured using Cisco IOS commands. The following commands demonstrate 
 
     enable
     configure terminal
-    router ospf 1
+    router ospf 10
      network 10.0.0.4 0.0.0.3 area 0
      network 10.0.0.8 0.0.0.3 area 0
     end
@@ -79,7 +76,7 @@ OSPF is configured using Cisco IOS commands. The following commands demonstrate 
 
     enable
     configure terminal
-    router ospf 1
+    router ospf 10
      network 10.0.0.8 0.0.0.3 area 0
      network 192.168.10.0 0.0.0.255 area 0
      network 192.168.20.0 0.0.0.255 area 0
@@ -153,18 +150,6 @@ Actual testing results should be recorded based on the commands executed on the 
 ## 7. Screenshots
 
 The following screenshots provide evidence of the OSPF configuration and verification.
-
-**OSPF Neighbor Verification**
-
-This screenshot shows the OSPF neighbor verification output, demonstrating the neighbor relationships and their adjacency states.
-
-![OSPF Neighbor Verification](/Screenshots/ospf-neighbor.png)
-
-**OSPF Routing Table Verification**
-
-This screenshot shows the OSPF routing table, demonstrating the routes learned dynamically through OSPF.
-
-![OSPF Routing Table](/Screenshots/ospf-routing-table.png)
 
 **R1 to R3 Connectivity Test**
 
