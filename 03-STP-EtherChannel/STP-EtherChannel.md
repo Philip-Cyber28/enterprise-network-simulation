@@ -177,7 +177,6 @@ The supplied screenshots document:
 | VLAN verification | Screenshot evidence provided |
 | PortFast configuration | Screenshot evidence provided |
 | BPDU Guard configuration | Screenshot evidence provided |
-| Member link failure test | Not confirmed |
 
 ### 5.1 STP Testing
 
