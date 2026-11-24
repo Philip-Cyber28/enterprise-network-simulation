@@ -9,8 +9,6 @@ The NAT/PAT configuration is performed on the edge router connecting the interna
 - **Inside interface:** The interface facing the internal network (towards R2 and the rest of the campus).
 - **Outside interface:** The interface facing the ISP (10.0.0.1/30).
 
-*(TODO: Confirm that R1 is the device performing NAT/PAT and fill in the exact interface names from your `nat-overload` screenshot.)*
-
 ### Network Reference
 | Connection | Network | First device | Second device |
 |---|---|---|---|
