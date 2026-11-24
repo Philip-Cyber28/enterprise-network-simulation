@@ -1,4 +1,3 @@
-
 # STP and EtherChannel
 
 ## 1. Objective
@@ -35,12 +34,23 @@ The configuration includes:
 | PortFast | Configured on AS1 |
 | BPDU Guard | Configured on AS1 |
 
-### 2.2 STP Screenshots
+### 2.2 Spanning Tree Screenshots
 
-- `Screenshots/spanning-tree-cs`
-- `Screenshots/spanning-tree-as1`
-- `Screenshots/portfast-as1`
-- `Screenshots/bpdu-guard-as1`
+**Spanning Tree Configuration - CS**
+
+![Spanning Tree CS](Screenshots/spanning-tree-cs)
+
+**Spanning Tree Configuration - AS1**
+
+![Spanning Tree AS1](Screenshots/spanning-tree-as1)
+
+**PortFast Configuration - AS1**
+
+![PortFast AS1](Screenshots/portfast-as1)
+
+**BPDU Guard Configuration - AS1**
+
+![BPDU Guard AS1](Screenshots/bpdu-guard-as1)
 
 ---
 
@@ -64,23 +74,51 @@ EtherChannel combines multiple physical links into one logical connection betwee
 
 ### 3.3 EtherChannel Screenshots
 
-**AS1**
-- `Screenshots/creating-ether-as1`
-- `Screenshots/creating-ether-cs-as1`
-- `Screenshots/verify-ether-as1`
+#### AS1 Configuration
 
-**AS2**
-- `Screenshots/creating-ether-as2`
-- `Screenshots/creating-ether-cs-as2`
-- `Screenshots/verify-ether-as2`
+**Creating EtherChannel - AS1**
 
-**AS3**
-- `Screenshots/creating-ether-as3`
-- `Screenshots/creating-ether-cs-as3`
-- `Screenshots/verify-ether-as3`
+![Creating EtherChannel AS1](Screenshots/creating-ether-as1)
 
-**Additional Verification**
-- `Screenshots/verify-ether-cs`
+**Creating EtherChannel CS - AS1**
+
+![Creating EtherChannel CS AS1](Screenshots/creating-ether-cs-as1)
+
+**Verifying EtherChannel - AS1**
+
+![Verify EtherChannel AS1](Screenshots/verify-ether-as1)
+
+#### AS2 Configuration
+
+**Creating EtherChannel - AS2**
+
+![Creating EtherChannel AS2](Screenshots/creating-ether-as2)
+
+**Creating EtherChannel CS - AS2**
+
+![Creating EtherChannel CS AS2](Screenshots/creating-ether-cs-as2)
+
+**Verifying EtherChannel - AS2**
+
+![Verify EtherChannel AS2](Screenshots/verify-ether-as2)
+
+#### AS3 Configuration
+
+**Creating EtherChannel - AS3**
+
+![Creating EtherChannel AS3](Screenshots/creating-ether-as3)
+
+**Creating EtherChannel CS - AS3**
+
+![Creating EtherChannel CS AS3](Screenshots/creating-ether-cs-as3)
+
+**Verifying EtherChannel - AS3**
+
+![Verify EtherChannel AS3](Screenshots/verify-ether-as3)
+
+#### Additional EtherChannel Verification
+
+![Verify EtherChannel CS](Screenshots/verify-ether-cs)
 
 ---
 
@@ -171,26 +209,49 @@ Record the results after testing:
 
 ---
 
-## 6. Trunking and VLAN Screenshots
+## 6. Trunking and VLAN Configuration
 
 ### 6.1 Trunking Configuration
 
-**AS1**
-- `Screenshots/trunking-as1`
-- `Screenshots/verify-trunking-as1`
+#### AS1
 
-**AS2**
-- `Screenshots/trunking-as2`
-- `Screenshots/verify-trunking-as2`
+**Trunking Configuration**
 
-**AS3**
-- `Screenshots/trunking-as3`
-- `Screenshots/verify-trunking-as3`
+![Trunking AS1](Screenshots/trunking-as1)
+
+**Trunking Verification**
+
+![Verify Trunking AS1](Screenshots/verify-trunking-as1)
+
+#### AS2
+
+**Trunking Configuration**
+
+![Trunking AS2](Screenshots/trunking-as2)
+
+**Trunking Verification**
+
+![Verify Trunking AS2](Screenshots/verify-trunking-as2)
+
+#### AS3
+
+**Trunking Configuration**
+
+![Trunking AS3](Screenshots/trunking-as3)
+
+**Trunking Verification**
+
+![Verify Trunking AS3](Screenshots/verify-trunking-as3)
 
 ### 6.2 VLAN Configuration
 
-- `Screenshots/creating-vlan-cs`
-- `Screenshots/sh-vlan-creation-cs`
+**Creating VLANs - CS**
+
+![Creating VLAN CS](Screenshots/creating-vlan-cs)
+
+**VLAN Creation Verification - CS**
+
+![Show VLAN Creation CS](Screenshots/sh-vlan-creation-cs)
 
 ---
 
@@ -202,6 +263,6 @@ STP prevents switching loops and maintains a stable network topology by controll
 
 EtherChannel combines multiple physical connections into a single logical link to provide increased bandwidth and redundancy.
 
-The supplied screenshots document the configuration and verification of EtherChannel, trunking, VLANs, spanning tree, PortFast, and BPDU Guard.
+The screenshots document the configuration and verification of EtherChannel, trunking, VLANs, spanning tree, PortFast, and BPDU Guard.
 
 These configurations help improve network reliability, availability, and performance.
