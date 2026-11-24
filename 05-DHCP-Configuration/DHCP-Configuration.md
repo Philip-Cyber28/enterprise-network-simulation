@@ -1,100 +1,119 @@
 
-# DHCP Configuration
+# DNS and Server Services
 
 ## 1. Objective
 
-Automatically assign IPv4 configuration to client devices using DHCP services.
+Document the DNS service and other server services configured in the enterprise network. The DNS server provides hostname resolution, allowing client devices to access network services using hostnames instead of IP addresses.
 
-## 2. Implementation
+## 2. Server Inventory
 
-The DHCP server is configured to automatically distribute IP addresses and network settings to clients across multiple VLANs. DHCP pools are configured for the required departments, and DHCP relay is used where necessary to forward client requests to the DHCP server.
+The enterprise network uses three servers connected to the Core Layer 3 Switch through Access Switch 3 (SW3). All servers belong to VLAN 10 (SERVER).
 
-## 3. DHCP Scope Information
+| Service | Server Name | IP Address | Default Gateway |
+|---|---|---|---|
+| WEB | Web Server | 192.168.10.10 | 192.168.10.1 |
+| DNS | DNS Server | 192.168.10.20 | 192.168.10.1 |
+| DHCP | DHCP Server | 192.168.10.30 | 192.168.10.1 |
 
-The DHCP pools are configured for the different VLANs and departments. Each pool provides the appropriate IP address range and network configuration to its clients.
+### Server Network Information
 
-| VLAN | Network | Default Gateway | DNS Server | Address Pool |
-|---|---|---|---|---|
-| Department VLANs | As configured | As configured | As configured | As configured |
+- VLAN: 10 (SERVER)
+- Network: 192.168.10.0/24
+- Subnet Mask: 255.255.255.0
+- Default Gateway: 192.168.10.1
 
-## 4. Configuration
+## 3. DNS Configuration
 
-The DHCP pools are configured under **Services > DHCP** on the Packet Tracer server.
+The DNS service is configured on the Packet Tracer DNS server under **Services > DNS**.
 
-The following screenshots show the DHCP pool configuration and DHCP relay settings:
+The DNS server uses the static IP address `192.168.10.20` and default gateway `192.168.10.1`.
 
-### DHCP Pool Configuration
+The DNS service provides hostname resolution for devices across the enterprise network.
 
-![DHCP Pool](/Screenshots/it-dhcp-pool.png)
+### DNS Server Configuration
 
-### DHCP Pool Details
+![Set DNS Server](/Screenshots/set-dns-server.png)
 
-![DHCP Pool Configuration](/Screenshots/dhcp-pool-config.png)
+### DNS Host Records
 
-### DHCP Helper Configuration
+The DNS server is configured to resolve hostnames to their corresponding server IP addresses.
 
-![DHCP Helper](/Screenshots/dhcp-helper-cs.png)
+| Hostname | Record Type | IP Address |
+|---|---|---|
+| Web Server hostname | A | 192.168.10.10 |
+
+The A record maps the configured web server hostname to its IP address, allowing clients to access the web server using its hostname.
+
+## 4. Other Server Services
+
+The enterprise network includes the following server services:
+
+### 4.1 Web Server
+
+- Server IP Address: `192.168.10.10`
+- Default Gateway: `192.168.10.1`
+- VLAN: 10
+- Network: `192.168.10.0/24`
+
+The Web Server provides website hosting services for network clients.
+
+### 4.2 DHCP Server
+
+- Server IP Address: `192.168.10.30`
+- Default Gateway: `192.168.10.1`
+- VLAN: 10
+- Network: `192.168.10.0/24`
+
+The DHCP Server automatically assigns IPv4 configuration to client devices across the configured VLANs.
+
+### 4.3 DNS Server
+
+- Server IP Address: `192.168.10.20`
+- Default Gateway: `192.168.10.1`
+- VLAN: 10
+- Network: `192.168.10.0/24`
+
+The DNS Server translates configured hostnames into their corresponding IP addresses.
 
 ## 5. Verification
 
-DHCP configuration was verified by checking whether client devices from different departments successfully received IP addresses from the DHCP server.
+DNS configuration was verified by checking the DNS server settings and testing the DNS service.
 
-### IT Department
+The verification process includes:
 
-![Verify DHCP IT](/Screenshots/verify-dhcp-it.png)
+- Confirming that clients receive the correct DNS server address (`192.168.10.20`).
+- Checking the configured DNS host records.
+- Testing hostname resolution using `nslookup` if supported.
+- Accessing the configured website using its hostname in the PC web browser.
+- Testing server reachability using `ping`.
 
-### HR Department
+### DNS Server Verification
 
-![Verify DHCP HR](/Screenshots/verify-dhcp-hr.png)
-
-### Administration Department
-
-![Verify DHCP Admin](/Screenshots/verify-dhcp-admin.png)
-
-### Finance Department
-
-![Verify DHCP Finance](/Screenshots/verify-dhcp-finance.png)
-
-### Sales Department
-
-![Verify DHCP Sales](/Screenshots/verify-dhcp-sales.png)
-
-### Management Department
-
-![Verify DHCP Management](/Screenshots/verify-dhcp-management.png)
-
-### Guest Department
-
-![Verify DHCP Guest](/Screenshots/verify-dhcp-guest.png)
-
-### DHCP Server IP Verification
-
-![Verify DHCP Server IP](/Screenshots/verify-dhcp-serverip-it.png)
+![Verify DNS Server](/Screenshots/verify-dns-server.png)
 
 ## 6. Testing Results
 
-DHCP verification was performed across the different department VLANs. The client verification screenshots document the DHCP testing process, while the server IP verification screenshot documents the DHCP server configuration.
+DNS server configuration and verification were performed to ensure that hostname resolution is available within the enterprise network.
 
-The testing focused on:
+The DNS server uses the static IP address `192.168.10.20`, while the Web Server uses `192.168.10.10`.
 
-- Automatic IPv4 address assignment.
-- DHCP pool configuration for different departments.
-- DHCP helper configuration.
-- DHCP server IP verification.
-- Successful DHCP configuration across client VLANs.
+The verification screenshot provides evidence of the DNS server configuration and testing process.
 
-## 7. Screenshots
+## 7. Network Connectivity
 
-The following screenshots are included as evidence of DHCP implementation and testing:
+All three servers are connected to Access Switch 3 (SW3) and assigned to VLAN 10.
 
-1. `/Screenshots/it-dhcp-pool.png`
-2. `/Screenshots/dhcp-pool-config.png`
-3. `/Screenshots/dhcp-helper-cs.png`
-4. `/Screenshots/verify-dhcp-it.png`
-5. `/Screenshots/verify-dhcp-hr.png`
-6. `/Screenshots/verify-dhcp-admin.png`
-7. `/Screenshots/verify-dhcp-finance.png`
-8. `/Screenshots/verify-dhcp-sales.png`
-9. `/Screenshots/verify-dhcp-management.png`
-10. `/Screenshots/verify-dhcp-guest.png`
-11. `/Screenshots/verify-dhcp-server-ip.png`
+| No. | Switch | Interface | Connected Device | VLAN |
+|---|---|---|---|---|
+| 1 | SW3 | F0/1 | WEB Server | 10 |
+| 2 | SW3 | F0/2 | DNS Server | 10 |
+| 3 | SW3 | F0/3 | DHCP Server | 10 |
+
+The servers communicate through the SERVER VLAN using the default gateway `192.168.10.1`.
+
+## 8. Screenshots
+
+The following screenshots are included as evidence of DNS configuration and verification:
+
+1. `/Screenshots/set-dns-server.png`
+2. `/Screenshots/verify-dns-server.png`
