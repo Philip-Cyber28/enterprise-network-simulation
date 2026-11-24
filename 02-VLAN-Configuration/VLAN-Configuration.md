@@ -98,7 +98,37 @@ The screenshots below show the VLAN creation process and verification of the con
 
 ![VLAN Creation Commands on AS3](/Screenshots/sh-vlan-creation-as3.png)
 
-## 5. Verification
+## 5. VLAN Creation on Core Switch (CS)
+
+VLANs were also created on the Core Switch (CS) to ensure that the required VLANs are available within the network infrastructure.
+
+![Creating VLANs on CS](/Screenshots/creating-vlan-cs.png)
+
+![VLAN Creation Verification on CS](/Screenshots/sh-vlan-creation-cs.png)
+
+## 6. Allowed VLAN Configuration
+
+Allowed VLANs were configured on the respective switches to control which VLAN traffic can pass through the network connections between switches.
+
+### 6.1 Switch AS1
+
+The screenshot below shows the allowed VLAN configuration on Switch AS1, specifying which VLANs are permitted to pass through its trunk connection.
+
+![Allowed VLANs on AS1](/Screenshots/allowed-vlan-as1.png)
+
+### 6.2 Switch AS2
+
+The screenshot below shows the allowed VLAN configuration on Switch AS2 to ensure that the required VLAN traffic can pass through its trunk connection.
+
+![Allowed VLANs on AS2](/Screenshots/allowed-vlan-as2.png)
+
+### 6.3 Switch AS3
+
+The screenshot below shows the allowed VLAN configuration on Switch AS3, ensuring that the required VLANs are permitted across its trunk connection.
+
+![Allowed VLANs on AS3](/Screenshots/allowed-vlan-as3.png)
+
+## 7. Verification
 
 The following commands were used to verify the VLAN configuration and trunk connections across the switches.
 
@@ -125,7 +155,3 @@ show interfaces status
 ```
 
 This command displays the operational status and VLAN assignment of switch interfaces.
-
-## 6. Conclusion
-
-VLAN segmentation was implemented across switches AS1, AS2, and AS3 to logically separate the different departments and server infrastructure. VLANs were created, named, and assigned to the appropriate switch ports. Verification commands were also used to check the VLAN configurations, trunk connections, and interface statuses.
