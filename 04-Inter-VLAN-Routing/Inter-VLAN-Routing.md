@@ -30,7 +30,7 @@ ip routing
 end
 ```
 
-![Enable IP Routing](Screenshots/enable-routing.png)
+![Enable IP Routing](/Screenshots/enable-routing.png)
 
 ### 3.2 Configure VLAN Interfaces (SVIs)
 
@@ -48,7 +48,7 @@ end
 
 Repeat the configuration for each VLAN using its appropriate gateway IP address and subnet mask.
 
-![IP Assignment Configuration](Screenshots/ip-assign-cs.png)
+![IP Assignment Configuration](/Screenshots/ip-assign-cs.png)
 
 ### 3.3 Configure IP Addressing on End Devices
 
@@ -56,11 +56,11 @@ Configure the IP address, subnet mask, and default gateway on the end devices ac
 
 The default gateway must correspond to the IP address configured on the SVI for that VLAN.
 
-![IP Assignment Verification](Screenshots/verify-ip-assign-c.png)
+![IP Assignment Verification](/Screenshots/verify-ip-assign-c.png)
 
-![Static IP Configuration](Screenshots/it-static-test.png)
+![Static IP Configuration](/Screenshots/it-static-test.png)
 
-![Static IP Configuration Test](Screenshots/it-static-test-2.png)
+![Static IP Configuration Test](/Screenshots/it-static-test-2.png)
 
 ## 4. Verification
 
@@ -100,7 +100,7 @@ ping [DESTINATION-IP]
 
 A successful ping indicates that communication between the tested devices is working.
 
-![Inter-VLAN Verification](Screenshots/verify-intervlan.png)
+![Inter-VLAN Verification](/Screenshots/verify-intervlan.png)
 
 ### 4.5 Verify Routing Table Configuration
 
@@ -110,7 +110,7 @@ Check the routing table on the Layer 3 switch to verify the available network ro
 show ip route
 ```
 
-![Routing Table Verification](Screenshots/routing-table-cs.png)
+![Routing Table Verification](/Screenshots/routing-table-cs.png)
 
 ## 5. Testing Results
 
@@ -135,26 +135,26 @@ The following screenshots document the Inter-VLAN Routing implementation and ver
 
 ### 6.1 Enable Routing
 
-![Enable Routing](Screenshots/enable-routing.png)
+![Enable Routing](/Screenshots/enable-routing.png)
 
 ### 6.2 IP Assignment Configuration
 
-![IP Assignment](Screenshots/ip-assign-cs.png)
+![IP Assignment](/Screenshots/ip-assign-cs.png)
 
 ### 6.3 Verify IP Assignment
 
-![Verify IP Assignment](Screenshots/verify-ip-assign-c.png)
+![Verify IP Assignment](/Screenshots/verify-ip-assign-c.png)
 
 ### 6.4 Static IP Configuration
 
-![Static IP Test](Screenshots/it-static-test.png)
+![Static IP Test](/Screenshots/it-static-test.png)
 
-![Static IP Test 2](Screenshots/it-static-test-2.png)
+![Static IP Test 2](/Screenshots/it-static-test-2.png)
 
 ### 6.5 Verify Inter-VLAN Connectivity
 
-![Verify Inter-VLAN](Screenshots/verify-intervlan.png)
+![Verify Inter-VLAN](/Screenshots/verify-intervlan.png)
 
 ### 6.6 Routing Table Verification
 
-![Routing Table](Screenshots/routing-table-cs.png)
+![Routing Table](/Screenshots/routing-table-cs.png)
