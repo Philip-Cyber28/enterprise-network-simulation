@@ -1,18 +1,76 @@
-# Port Security and SSH
+
+## Port Security and SSH
 
 ## 1. Objective
-Apply basic switch-port security and secure remote management.
+
+The objective of this lab is to configure basic switch-port security and secure remote management using SSH. Port security helps prevent unauthorized devices from connecting to the network, while SSH provides secure remote access to network devices.
 
 ## 2. Port Security
-Document the access ports protected, maximum allowed MAC addresses, violation action, and whether sticky MAC learning was used.
+
+Port security was configured on the required switch access ports to control which devices can connect to the network.
+
+The configuration includes:
+- Restricting access ports using port security.
+- Setting the maximum number of allowed MAC addresses.
+- Configuring the violation action.
+- Enabling sticky MAC learning where configured.
+
+The following screenshots show the port-security configuration:
+
+![Port Security AS1](/Screenshots/port-security-as1.png)
+
+![Port Security AS2](/Screenshots/port-security-as2.png)
+
+![Port Security AS3](/Screenshots/port-security-as3.png)
 
 ## 3. SSH Configuration
-Document the devices configured for SSH, management IP addresses, SSH version, and authentication method. Do not publish passwords or private keys.
+
+SSH was configured to provide secure remote management of network devices.
+
+The configuration includes:
+- Enabling SSH on the required devices.
+- Assigning management IP addresses.
+- Configuring SSH version 2.
+- Setting up local authentication.
+- Verifying SSH connectivity.
+
+The following screenshots show the SSH configuration and verification:
+
+![SSH Configuration](/Screenshots/ssh-cs.png)
+
+![Verify SSH](/Screenshots/verify-ssh-cs.png)
+
+![Show SSH](/Screenshots/show-ssh-cs.png)
 
 ## 4. Configuration
-Insert the actual port-security and SSH commands used.
 
-Example verification commands:
+The following commands were used for port security and SSH configuration.
+
+### Port Security Commands
+
+```cisco
+interface [INTERFACE]
+switchport mode access
+switchport port-security
+switchport port-security maximum [NUMBER]
+switchport port-security violation [ACTION]
+switchport port-security mac-address sticky
+```
+
+### SSH Configuration Commands
+
+```cisco
+hostname [DEVICE_NAME]
+ip domain-name [DOMAIN]
+crypto key generate rsa
+ip ssh version 2
+username [USERNAME] secret [PASSWORD]
+line vty 0 4
+login local
+transport input ssh
+```
+
+### Verification Commands
 
 ```cisco
 show port-security
@@ -22,7 +80,43 @@ show running-config
 ```
 
 ## 5. Testing Results
-Record whether unauthorized devices were restricted as expected and whether SSH management access worked.
+
+Port security was configured to restrict unauthorized devices from accessing protected switch ports. SSH management access was tested to verify that remote connections could be established securely.
+
+The following screenshots provide additional evidence of network configuration and testing:
+
+![Spanning Tree CS](/Screenshots/spanning-tree-cs.png)
+
+![Spanning Tree AS1](/Screenshots/spanning-tree-as1.png)
+
+![PortFast AS1](/Screenshots/portfast-as1.png)
+
+![BPDU Guard AS1](/Screenshots/bpdu-guard-as1.png)
 
 ## 6. Screenshots
-Add port-security status and SSH connection screenshots. Hide usernames or sensitive information if necessary.
+
+### Port Security
+
+- `/Screenshots/port-security-as1.png`
+- `/Screenshots/port-security-as2.png`
+- `/Screenshots/port-security-as3.png`
+
+### SSH Configuration and Verification
+
+- `/Screenshots/ssh-cs.png`
+- `/Screenshots/verify-ssh-cs.png`
+- `/Screenshots/show-ssh-cs.png`
+
+### IP Address Configuration
+
+- `/Screenshots/ip-add-isp.png`
+- `/Screenshots/ip-add-r1.png`
+
+### Spanning Tree and Port Protection
+
+- `/Screenshots/spanning-tree-cs.png`
+- `/Screenshots/spanning-tree-as1.png`
+- `/Screenshots/portfast-as1.png`
+- `/Screenshots/bpdu-guard-as1.png`
+
+**Note:** Passwords and private keys are not included in this documentation.
