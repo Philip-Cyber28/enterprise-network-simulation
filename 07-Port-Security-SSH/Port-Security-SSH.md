@@ -65,7 +65,7 @@ ip domain-name [DOMAIN]
 crypto key generate rsa
 ip ssh version 2
 username [USERNAME] secret [PASSWORD]
-line vty 0 4
+line vty 0 15
 login local
 transport input ssh
 ```
@@ -83,16 +83,6 @@ show running-config
 
 Port security was configured to restrict unauthorized devices from accessing protected switch ports. SSH management access was tested to verify that remote connections could be established securely.
 
-The following screenshots provide additional evidence of network configuration and testing:
-
-![Spanning Tree CS](/Screenshots/spanning-tree-cs.png)
-
-![Spanning Tree AS1](/Screenshots/spanning-tree-as1.png)
-
-![PortFast AS1](/Screenshots/portfast-as1.png)
-
-![BPDU Guard AS1](/Screenshots/bpdu-guard-as1.png)
-
 ## 6. Screenshots
 
 ### Port Security
@@ -106,17 +96,5 @@ The following screenshots provide additional evidence of network configuration a
 - `/Screenshots/ssh-cs.png`
 - `/Screenshots/verify-ssh-cs.png`
 - `/Screenshots/show-ssh-cs.png`
-
-### IP Address Configuration
-
-- `/Screenshots/ip-add-isp.png`
-- `/Screenshots/ip-add-r1.png`
-
-### Spanning Tree and Port Protection
-
-- `/Screenshots/spanning-tree-cs.png`
-- `/Screenshots/spanning-tree-as1.png`
-- `/Screenshots/portfast-as1.png`
-- `/Screenshots/bpdu-guard-as1.png`
 
 **Note:** Passwords and private keys are not included in this documentation.
