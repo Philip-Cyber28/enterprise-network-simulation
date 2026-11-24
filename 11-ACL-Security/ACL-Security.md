@@ -44,27 +44,15 @@ The objective of this lab is to control network traffic between selected network
 ### 4.1 SSH Management ACL
 This ACL limits which networks can open SSH sessions to the device.
 
-```cisco
-! Insert the actual ACL commands used (see acl-ssh screenshot)
-```
-
 ![ACL SSH Configuration](/Screenshots/acl-ssh.png)
 
 ### 4.2 Guest ACL
 This ACL controls traffic coming from the Guest network (192.168.80.0/24).
 
-```cisco
-! Insert the actual ACL commands used (see acl-guest screenshot)
-```
-
 ![ACL Guest Configuration](/Screenshots/acl-guest.png)
 
 ### 4.3 HR ACL
 This ACL controls traffic coming from the HR network (192.168.30.0/24) towards the Server network.
-
-```cisco
-! Insert the actual ACL commands used (see acl-hr screenshot)
-```
 
 ![ACL HR Configuration](/Screenshots/acl-hr.png)
 
