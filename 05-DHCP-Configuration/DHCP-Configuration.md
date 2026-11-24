@@ -69,7 +69,7 @@ DHCP configuration was verified by checking whether client devices from differen
 
 ### DHCP Server IP Verification
 
-![Verify DHCP Server IP](/Screenshots/verify-dhcp-server-ip.png)
+![Verify DHCP Server IP](/Screenshots/verify-dhcp-serverip.png)
 
 ## 6. Testing Results
 
