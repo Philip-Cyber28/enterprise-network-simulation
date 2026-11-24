@@ -56,7 +56,7 @@ Configure the IP address, subnet mask, and default gateway on the end devices ac
 
 The default gateway must correspond to the IP address configured on the SVI for that VLAN.
 
-![IP Assignment Verification](/Screenshots/verify-ip-assign-c.png)
+![IP Assignment Verification](/Screenshots/verify-ip-assign-cs.png)
 
 ![Static IP Configuration](/Screenshots/it-static-test.png)
 
