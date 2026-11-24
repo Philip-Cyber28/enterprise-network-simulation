@@ -39,19 +39,19 @@ The configuration includes:
 
 **Spanning Tree Configuration - CS**
 
-![Spanning Tree CS](Screenshots/spanning-tree-cs.png)
+![Spanning Tree CS](/Screenshots/spanning-tree-cs.png)
 
 **Spanning Tree Configuration - AS1**
 
-![Spanning Tree AS1](Screenshots/spanning-tree-as1.png)
+![Spanning Tree AS1](/Screenshots/spanning-tree-as1.png)
 
 **PortFast Configuration - AS1**
 
-![PortFast AS1](Screenshots/portfast-as1.png)
+![PortFast AS1](/Screenshots/portfast-as1.png)
 
 **BPDU Guard Configuration - AS1**
 
-![BPDU Guard AS1](Screenshots/bpdu-guard-as1.png)
+![BPDU Guard AS1](/Screenshots/bpdu-guard-as1.png)
 
 ---
 
@@ -79,47 +79,47 @@ EtherChannel combines multiple physical links into one logical connection betwee
 
 **Creating EtherChannel - AS1**
 
-![Creating EtherChannel AS1](Screenshots/creating-ether-as1.png)
+![Creating EtherChannel AS1](/Screenshots/creating-ether-as1.png)
 
 **Creating EtherChannel CS - AS1**
 
-![Creating EtherChannel CS AS1](Screenshots/creating-ether-cs-as1.png)
+![Creating EtherChannel CS AS1](/Screenshots/creating-ether-cs-as1.png)
 
 **Verifying EtherChannel - AS1**
 
-![Verify EtherChannel AS1](Screenshots/verify-ether-as1.png)
+![Verify EtherChannel AS1](/Screenshots/verify-ether-as1.png)
 
 #### AS2 Configuration
 
 **Creating EtherChannel - AS2**
 
-![Creating EtherChannel AS2](Screenshots/creating-ether-as2.png)
+![Creating EtherChannel AS2](/Screenshots/creating-ether-as2.png)
 
 **Creating EtherChannel CS - AS2**
 
-![Creating EtherChannel CS AS2](Screenshots/creating-ether-cs-as2.png)
+![Creating EtherChannel CS AS2](/Screenshots/creating-ether-cs-as2.png)
 
 **Verifying EtherChannel - AS2**
 
-![Verify EtherChannel AS2](Screenshots/verify-ether-as2.png)
+![Verify EtherChannel AS2](/Screenshots/verify-ether-as2.png)
 
 #### AS3 Configuration
 
 **Creating EtherChannel - AS3**
 
-![Creating EtherChannel AS3](Screenshots/creating-ether-as3.png)
+![Creating EtherChannel AS3](/Screenshots/creating-ether-as3.png)
 
 **Creating EtherChannel CS - AS3**
 
-![Creating EtherChannel CS AS3](Screenshots/creating-ether-cs-as3.png)
+![Creating EtherChannel CS AS3](/Screenshots/creating-ether-cs-as3.png)
 
 **Verifying EtherChannel - AS3**
 
-![Verify EtherChannel AS3](Screenshots/verify-ether-as3.png)
+![Verify EtherChannel AS3](/Screenshots/verify-ether-as3.png)
 
 #### Additional EtherChannel Verification
 
-![Verify EtherChannel CS](Screenshots/verify-ether-cs.png)
+![Verify EtherChannel CS](/Screenshots/verify-ether-cs.png)
 
 ---
 
@@ -218,41 +218,41 @@ Record the results after testing:
 
 **Trunking Configuration**
 
-![Trunking AS1](Screenshots/trunking-as1.png)
+![Trunking AS1](/Screenshots/trunking-as1.png)
 
 **Trunking Verification**
 
-![Verify Trunking AS1](Screenshots/verify-trunking-as1.png)
+![Verify Trunking AS1](/Screenshots/verify-trunking-as1.png)
 
 #### AS2
 
 **Trunking Configuration**
 
-![Trunking AS2](Screenshots/trunking-as2.png)
+![Trunking AS2](/Screenshots/trunking-as2.png)
 
 **Trunking Verification**
 
-![Verify Trunking AS2](Screenshots/verify-trunking-as2.png)
+![Verify Trunking AS2](/Screenshots/verify-trunking-as2.png)
 
 #### AS3
 
 **Trunking Configuration**
 
-![Trunking AS3](Screenshots/trunking-as3.png)
+![Trunking AS3](/Screenshots/trunking-as3.png)
 
 **Trunking Verification**
 
-![Verify Trunking AS3](Screenshots/verify-trunking-as3.png)
+![Verify Trunking AS3](/Screenshots/verify-trunking-as3.png)
 
 ### 6.2 VLAN Configuration
 
 **Creating VLANs - CS**
 
-![Creating VLAN CS](Screenshots/creating-vlan-cs.png)
+![Creating VLAN CS](/Screenshots/creating-vlan-cs.png)
 
 **VLAN Creation Verification - CS**
 
-![Show VLAN Creation CS](Screenshots/sh-vlan-creation-cs.png)
+![Show VLAN Creation CS](/Screenshots/sh-vlan-creation-cs.png)
 
 ---
 
