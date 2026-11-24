@@ -1,34 +1,59 @@
+
 # DNS and Server Services
 
 ## 1. Objective
-Document the DNS service and other server services configured in the enterprise network.
+
+Document the DNS service configured in the enterprise network and demonstrate how clients use DNS to resolve hostnames into IP addresses.
 
 ## 2. Server Inventory
-| Service | Server name | IP address |
+
+The following table identifies the server services documented in the network.
+
+| Service | Server Name | IP Address |
 |---|---|---|
-| DNS | [Server name] | [Static IP] |
-| DHCP | [Server name] | [Static IP] |
-| Web | [Server name] | [Static IP] |
-| Other services | [Server name] | [Static IP] |
+| DNS | DNS Server | As configured |
 
 ## 3. DNS Configuration
-Document the DNS service setting and the host records created.
 
-| Hostname | Record type | IP address |
+The DNS service is configured on the Packet Tracer server under **Services > DNS**.
+
+The DNS server is configured to provide hostname resolution for client devices across the enterprise network.
+
+### DNS Server Configuration
+
+![Set DNS Server](/Screenshots/set-dns-server.png)
+
+### DNS Host Records
+
+The DNS service contains the hostname records configured for the enterprise network.
+
+| Hostname | Record Type | IP Address |
 |---|---|---|
-| [Hostname] | A | [Web server IP] |
+| As configured | A | As configured |
 
 ## 4. Other Server Services
-List only the services actually enabled in Packet Tracer, such as HTTP/HTTPS, FTP, or email.
+
+This section focuses on the DNS service configured in the network. No additional server services are documented in the provided screenshots.
 
 ## 5. Verification
-- Confirm clients receive the correct DNS server address.
-- Use `nslookup [hostname]` if supported.
-- Open the configured website using its hostname in the PC web browser.
-- Test server reachability using `ping`.
+
+DNS configuration was verified by checking the DNS server settings and testing DNS functionality.
+
+The following screenshot demonstrates the DNS server verification.
+
+### DNS Server Verification
+
+![Verify DNS Server](/Screenshots/verify-dns-server.png)
 
 ## 6. Testing Results
-Record successful DNS resolution and access to each enabled service.
+
+DNS server configuration and verification were performed to ensure that the DNS service was configured in the enterprise network.
+
+The verification screenshot provides evidence of the DNS server testing process.
 
 ## 7. Screenshots
-Add DNS records, service settings, and client test screenshots.
+
+The following screenshots are included as evidence of DNS configuration and verification:
+
+1. `/Screenshots/set-dns-server.png`
+2. `/Screenshots/verify-dns-server.png`
