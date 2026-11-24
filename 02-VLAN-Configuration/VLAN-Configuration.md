@@ -36,4 +36,4 @@ show interfaces trunk
 ```
 
 ## 5. Screenshots
-![Image description](Screenshots/creating-vlan-as1.png)
+![Image description](/Screenshots/creating-vlan-as1.png)
