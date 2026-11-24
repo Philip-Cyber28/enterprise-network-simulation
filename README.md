@@ -25,7 +25,7 @@ This project demonstrates the design and configuration of a small enterprise net
 | Layer 2 switches | Cisco 2960 | 3 |
 | PCs | PC-PT | 6 |
 | Servers | Server-PT | 3 |
-| Wireless access point | Packet Tracer AP | 1 ) |
+| Wireless access point | Packet Tracer AP | 1 |
 
 ## 5. Technologies Implemented
 - IPv4 addressing and subnetting
@@ -54,7 +54,6 @@ This project demonstrates the design and configuration of a small enterprise net
 | [10-ACL-Security](10-ACL-Security/) | Access control lists |
 | [11-STP-EtherChannel](11-STP-EtherChannel/) | Layer 2 redundancy |
 | [12-Port-Security-SSH](12-Port-Security-SSH/) | Switch-port and remote-access security |
-| [13-Troubleshooting-Testing](13-Troubleshooting-Testing/) | Verification and test results |
 
 ## 7. Project File
 Open `Enterprise-Network.pkt` using Cisco Packet Tracer.
